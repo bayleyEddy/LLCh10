@@ -11,4 +11,16 @@ class ItemCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var serialNumberLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
+    
+    func configure(with item: Item) {
+        nameLabel.text = item.name
+        serialNumberLabel.text = item.serialNumber
+        valueLabel.text = "$\(item.valueInDollars)"
+        
+        if item.valueInDollars < 50 {
+            valueLabel.textColor = UIColor.systemGreen
+        } else {
+            valueLabel.textColor = UIColor.systemRed
+        }
+    }
 }

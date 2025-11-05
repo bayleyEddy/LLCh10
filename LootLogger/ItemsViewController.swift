@@ -64,7 +64,7 @@ class ItemsViewController: UITableViewController{
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.name
         cell.valueLabel.text = "$\(item.valueInDollars)"
-        
+        cell.configure(with: item)
         return cell
     }
     
